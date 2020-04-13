@@ -2,20 +2,26 @@
   font-family: OpenSans;
   src: url(../../assets/fonts/OpenSans-Regular.ttf);
 }
-body,
-html {
+html,
+body {
   min-height: 100%;
-  height: 100%;
 }
 body {
   width: 100%;
+  height: 100vh;
   font-family: OpenSans;
 }
 .flex {
   display: flex;
 }
 main {
+  flex-direction: column;
   height: 100vh;
+}
+@media screen and (min-width: 768px) {
+  main {
+    flex-direction: row;
+  }
 }
 h1,
 h2 {

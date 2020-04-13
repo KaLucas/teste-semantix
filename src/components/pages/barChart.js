@@ -58,6 +58,16 @@ export default class BarChart extends React.Component {
                 },
               }]
             },
+            tooltips: {
+              backgroundColor: '#F4F6F9',
+              bodyFontColor: '#9B9B9B',
+              borderColor: '#D8DDE6',
+              bodyFontStyle: 'bold',
+              borderWidth: 2,
+              titleFontSize: 0,
+              displayColors: false,
+              xPadding: 10
+            },
             plugins: {
               labels: false
             }

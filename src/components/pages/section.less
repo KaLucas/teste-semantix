@@ -1,7 +1,10 @@
 section {
-  flex:1;
   background-color: #E5E5E5;
-  padding: 50px 73px;
+  padding: 30px 10px;
+  flex:1;
+  @media screen and (min-width: 1280px) {
+    padding: 50px 73px;
+  }
   h1 {
     font-size: 48px;
     color: #001B36;
@@ -14,18 +17,40 @@ section {
     font-weight: 600;
     margin-bottom: 30px;
   }
-  .chart {
-    width: 437px;
-    height: 358px;
-    &.barschart {
-      margin-right: 55px;
+  .chart-area {
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @media screen and (min-width: 1280px) {
+      justify-content: flex-start;
+    }
+    .chart {
+      width: 100%;
+      height: 100%;
+      @media screen and (min-width: 768px) {
+        width: 437px;
+        height: 358px;
+      }
+      &.barschart {
+        margin-bottom: 30px;
+        @media screen and (min-width: 1024px) {
+          margin:0;
+        }
+        @media screen and (min-width: 1280px) {
+          margin:0 55px 0 0;
+        }
+      }
     }
   }
   .chart,
   .linechart {
+    width: 100%;
     background-color: #fff;
-    box-sizing: border-box;
     padding: 21px 18px 0 14px;
+    box-sizing: border-box;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
@@ -34,7 +59,16 @@ section {
     box-shadow: -1px -2px 13px 1px rgba(216,221,230,1);
   }
   .linechart {
-    width: 869px;
-    height: 358px;
+    width: 100%;
+    height: 100%;
+    @media screen and (min-width: 1024px) {
+      width: 869px;
+      height: 358px;
+      box-sizing: content-box;
+      padding: 21px 18px 21px 14px;
+    }
+    @media screen and (min-width: 1280px) {
+      padding-bottom: 55px;
+    }
   }
 }

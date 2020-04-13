@@ -6,7 +6,10 @@ export default class LineChart extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      data:[]
+      data: {
+        labels : [],
+        datasets: []
+      }
     }
   }
 
@@ -21,14 +24,12 @@ export default class LineChart extends React.Component {
       const lineYesterday = res.data.yesterday;
       let lineTodayLabel = [];
       let lineTodayValue = [];
-      let lineYesterdayLabel = [];
       let lineYesterdayValue = [];
       lineToday.forEach(element => {
         lineTodayLabel.push(element.label);
         lineTodayValue.push(element.value);
       });
       lineYesterday.forEach(element => {
-        lineYesterdayLabel.push(element.label);
         lineYesterdayValue.push(element.value);
       });
       this.setState({
@@ -59,7 +60,7 @@ export default class LineChart extends React.Component {
         },
         options: {
           responsive: true,
-          maintainAspectRatio: true,
+          maintainAspectRatio:false,
           legend: {
             align: 'end',
             labels: {
@@ -72,16 +73,6 @@ export default class LineChart extends React.Component {
           },
           tooltips: {
             enabled: false
-          },
-          plugins: {
-            register: {
-              beforeDraw: function(c) {
-                const legends = c.legend.legendItems;
-                legends.forEach(function(e) {
-                  e.fillStyle = 'red';
-                });
-              }
-            }
           }
         }
       });
@@ -90,7 +81,7 @@ export default class LineChart extends React.Component {
 
   render() {
     return(
-        <Line data={this.state.data} width={100} height={33} options={this.state.options} />
+        <Line data={this.state.data} options={this.state.options} />
     );
   }
 }

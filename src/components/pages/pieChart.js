@@ -69,6 +69,13 @@ export default class PieChart extends React.Component {
                 },
               }]
             },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  return data['labels'][tooltipItem['index']] + ': ' + data['datasets'][0]['data'][tooltipItem['index']] + '%';
+                }
+              }
+            },
             plugins: {
               labels: {
                 fontColor: ['#303F9F', '#ffffff', '#ffffff']

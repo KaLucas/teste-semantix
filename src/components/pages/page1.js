@@ -8,7 +8,7 @@ export default class Page1 extends React.Component {
     return(
       <div> 
         <h1>Page 1</h1>
-        <div className="flex">
+        <div className="chart-area flex">
           <div className="chart barschart">
             <h2>Bars Chart</h2>
             <BarChart />
