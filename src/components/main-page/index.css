@@ -1,0 +1,23 @@
+@font-face {
+  font-family: OpenSans;
+  src: url(../../assets/fonts/OpenSans-Regular.ttf);
+}
+body,
+html {
+  min-height: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  font-family: OpenSans;
+}
+.flex {
+  display: flex;
+}
+main {
+  height: 100vh;
+}
+h1,
+h2 {
+  margin: 0;
+}
